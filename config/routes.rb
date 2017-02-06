@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index' => 'home#index'
+  get 'email_controller/email_form' => 'email_controller#email_form'
+  post 'email_controller/email_send' => 'email_controller#email_send'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
