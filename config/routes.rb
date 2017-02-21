@@ -1,11 +1,33 @@
 Rails.application.routes.draw do
+  get 'numbers/list'
+
+  get 'numbers/add'
+
+  get 'numbers/add_process'
+
   get 'timeline/wirte' => 'timeline#wirte'
-  post 'timeline/posts' => 'timeline#posts'
+  get 'timeline/posts' => 'timeline#posts'
+  post 'timeline/write_complete' => 'timeline#write_complete'
+  get 'timeline/edit/:id' => 'timeline#edit'
+  post 'timeline/edit_complete'
+  get 'timeline/delete/:id' => 'timeline#delete'
+  get 'timeline/write_comment/:id' => 'timeline#write_comment'
+  post 'timeline/write_comment_complete'
+  
+  get 'user/signup'
+  post 'user/signup_complete'
+  
+  
   
   get 'home/index' => 'home#index'
   
   get 'email_controller/email_form' => 'email_controller#email_form'
   post 'email_controller/email_send' => 'email_controller#email_send'
+  
+  get "numbers/list" => 'numbers#list'
+  get "numbers/add" => 'numbers#add'
+  post "numbers/add_process" => 'numbers#add_process'
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.

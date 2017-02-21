@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215155203) do
+ActiveRecord::Schema.define(version: 20170220065041) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "name"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "diet_lists", force: :cascade do |t|
     t.integer  "weight"
@@ -27,6 +35,13 @@ ActiveRecord::Schema.define(version: 20170215155203) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "preys", force: :cascade do |t|
     t.string   "name"
     t.integer  "kcal"
@@ -37,6 +52,13 @@ ActiveRecord::Schema.define(version: 20170215155203) do
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
